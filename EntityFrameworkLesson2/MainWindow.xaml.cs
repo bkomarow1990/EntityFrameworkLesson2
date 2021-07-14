@@ -20,9 +20,19 @@ namespace EntityFrameworkLesson2
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Initializer init = new Initializer();
+        MusicalCollection db = new MusicalCollection();
         public MainWindow()
         {
             InitializeComponent();
+            db.Tracks.ToList();
+           //try { 
+              //  db.Countries.Add(new Country { Name= "Sweden" });
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }

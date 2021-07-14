@@ -67,14 +67,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Category.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="Genre.cs" />
+    <Compile Include="Initializer.cs" />
+    <Compile Include="Migrations\202107141254177_InitialCreate.cs" />
+    <Compile Include="Migrations\202107141254177_InitialCreate.designer.cs">
+      <DependentUpon>202107141254177_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107141324444_Rating_Add.cs" />
+    <Compile Include="Migrations\202107141324444_Rating_Add.designer.cs">
+      <DependentUpon>202107141324444_Rating_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Playlist.cs" />
+    <Compile Include="Track.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Album.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Artist.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -95,6 +112,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202107141254177_InitialCreate.resx">
+      <DependentUpon>202107141254177_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107141324444_Rating_Add.resx">
+      <DependentUpon>202107141324444_Rating_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
