@@ -20,3 +20,6 @@ C:\Users\Igor\Source\Repos\EntityFrameworkLesson2\EntityFrameworkLesson2\obj\Deb
 C:\Users\Igor\Source\Repos\EntityFrameworkLesson2\EntityFrameworkLesson2\obj\Debug\EntityFrameworkLesson2.pdb
 C:\Users\Igor\source\repos\EntityFrameworkLesson2\EntityFrameworkLesson2\obj\Debug\EntityFrameworkLesson2.Migrations.InitialCreate.resources
 C:\Users\Igor\source\repos\EntityFrameworkLesson2\EntityFrameworkLesson2\obj\Debug\EntityFrameworkLesson2.Migrations.Rating_Add.resources
+C:\Users\Igor\source\repos\EntityFrameworkLesson2\EntityFrameworkLesson2\obj\Debug\EntityFrameworkLesson2.Migrations.images.resources
+C:\Users\Igor\source\repos\EntityFrameworkLesson2\EntityFrameworkLesson2\obj\Debug\PlayListEditor.g.cs
+C:\Users\Igor\source\repos\EntityFrameworkLesson2\EntityFrameworkLesson2\obj\Debug\PlayListEditor.baml

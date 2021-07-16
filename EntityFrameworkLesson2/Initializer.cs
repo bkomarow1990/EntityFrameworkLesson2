@@ -11,6 +11,9 @@ namespace EntityFrameworkLesson2
     {
         protected override void Seed(MusicalCollection db)
         {
+            // CoverImages
+
+            db.CoverImages.Add(new CoverImage { Path = "https://i0.wp.com/itc.ua/wp-content/uploads/2019/09/Apple-Music-Android.jpg" });
             // Countries
             Country russia = new Country { Name = "Russia" };
             db.Countries.Add(russia);

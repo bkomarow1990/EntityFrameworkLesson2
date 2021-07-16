@@ -21,18 +21,85 @@ namespace EntityFrameworkLesson2
     public partial class MainWindow : Window
     {
         //Initializer init = new Initializer();
-        MusicalCollection db = new MusicalCollection();
+
+        ViewModel vm = new ViewModel();
         public MainWindow()
         {
             InitializeComponent();
-            db.Tracks.ToList();
-           //try { 
-              //  db.Countries.Add(new Country { Name= "Sweden" });
+            this.DataContext = vm;
+            //try { 
+            //  db.Countries.Add(new Country { Name= "Sweden" });
             //}
             //catch(Exception ex)
             //{
             //    MessageBox.Show(ex.Message);
             //}
+        }
+
+        private void addTrackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (PlaylistsComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Please, select playlist");
+                return;
+            }
+            if (vm.SelectedTrack == null)
+            {
+                MessageBox.Show("Please, select track");
+                return;
+            }
+            try
+            {
+                var playlist = PlaylistsComboBox.SelectedItem as Playlist;
+                if (playlist.Tracks.Contains(vm.SelectedTrack))
+                {
+                    MessageBox.Show("Track is exists");
+                    return;
+                }
+                playlist.Tracks.Add(vm.SelectedTrack);
+                vm.db.SaveChanges();
+                MessageBox.Show("Track was added in playlist");
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void deleteTrackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (PlaylistsComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Please, select playlist");
+                return;
+            }
+            if (vm.SelectedTrack == null)
+            {
+                MessageBox.Show("Please, select track");
+                return;
+            }
+            var playlist = PlaylistsComboBox.SelectedItem as Playlist;
+            if (!playlist.Tracks.Contains(vm.SelectedTrack))
+            {
+                MessageBox.Show("Track isn`t exists");
+                return;
+            }
+            try
+            {
+               
+                playlist.Tracks.Remove(vm.SelectedTrack);
+                vm.db.SaveChanges();
+                MessageBox.Show("Track was deleted in playlist");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void EditPlaylistBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PlayListEditor pe = new PlayListEditor(vm);
+            pe.Show();
         }
     }
 }

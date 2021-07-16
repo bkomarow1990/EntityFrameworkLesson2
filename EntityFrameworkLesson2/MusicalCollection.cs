@@ -24,5 +24,6 @@ namespace EntityFrameworkLesson2
          public virtual DbSet<Album> Albums { get; set; }
          public virtual DbSet<Track> Tracks { get; set; }
          public virtual DbSet<Playlist> Playlists{ get; set; }
+         public virtual DbSet<CoverImage> CoverImages { get; set; }
     }
 }
