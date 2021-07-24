@@ -45,15 +45,34 @@ namespace EntityFrameworkLesson2
                 // Open document
                 if (viewModel.SelectedPlaylist.CoverImage == null)
                 {
+                    //MessageBox.Show($"1 {dlg.FileName}");
+                    viewModel.SelectedPlaylist.CoverImage = viewModel.db.CoverImages.Add(new CoverImage { Path = dlg.FileName});
+                    viewModel.SelectedPlaylist.CoverImage.Path = dlg.FileName;
+                    Uri fileUri = new Uri(dlg.FileName);
+                    playlistImage.Source = new BitmapImage(fileUri);
 
-                    viewModel.db.CoverImages.Add(new CoverImage { Path = dlg.FileName});
-                    
                 }
                 else { 
-                viewModel.SelectedPlaylist.CoverImage.Path=dlg.FileName;
+                    //MessageBox.Show($"2 {dlg.FileName}");
+                    
+                    viewModel.SelectedPlaylist.CoverImage.Path=dlg.FileName;
+                    Uri fileUri = new Uri(dlg.FileName);
+                    playlistImage.Source = new BitmapImage(fileUri);
                 }
                 viewModel.db.SaveChanges();
             }
+        }
+
+        private void PlaylistsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+            if (PlaylistsListBox.SelectedItem == null || (PlaylistsListBox.SelectedItem as Playlist).CoverImage == null)
+            {
+                return;
+            }
+            string path = (PlaylistsListBox.SelectedItem as Playlist).CoverImage.Path;
+            Uri fileUri = new Uri(path);
+            playlistImage.Source = new BitmapImage(fileUri);
         }
     }
 }

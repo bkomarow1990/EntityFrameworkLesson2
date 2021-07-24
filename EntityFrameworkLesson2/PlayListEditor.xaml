@@ -13,8 +13,8 @@
         </Grid.ColumnDefinitions>
         <StackPanel>
             <Button x:Name="addImageBtn" Click="addImageBtn_Click">Add Image</Button>
-        <Image Source="{Binding SelectedPlaylist.CoverImage.Path}"></Image>
+            <Image  Name="playlistImage" Width="200" Height="200"></Image>
         </StackPanel>
-        <ListBox x:Name="PlaylistsListBox" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylist}" Grid.Column="1"> </ListBox>
+        <ListBox x:Name="PlaylistsListBox" ItemsSource="{Binding Playlists}" SelectedItem="{Binding SelectedPlaylist}" Grid.Column="1" SelectionChanged="PlaylistsListBox_SelectionChanged"> </ListBox>
     </Grid>
 </Window>
